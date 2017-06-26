@@ -13,14 +13,6 @@ int main(string[] args)
 		writefln("failed:\n%s",result.output);
 		return(-1);
 	}
-	//auto text=result.output;
-	
-	/*auto result=executeShell( "journalctl -r -n 40000 -u postfix | grep 'to=' | grep blocked'");
-	if (result.status!=0)
-	{
-		writefln("failed:\n%s",result.output);
-		return(-1);
-	}*/
 
 	auto froms=result.output.splitLines
 			.map!(a=>a.extractFrom)
